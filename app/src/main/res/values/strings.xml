@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">ArrayAdapterWork</string>
+    <string name="generate">Generate</string>
+    <string-array name="lastNames">
+        <item>Ivanov</item>
+        <item>Petrov</item>
+        <item>Sorokin</item>
+        <item>Voroncev</item>
+        <item>Premyakov</item>
+        <item>Bardash</item>
+        <item>Stolypin</item>
+        <item>Suvorov</item>
+        <item>Davydov</item>
+        <item>Krascov</item>
+        <item>Blinov</item>
+        <item>Putin</item>
+    </string-array>
+    <string-array name="firstNames">
+        <item>Stanislav</item>
+        <item>Aleksandr</item>
+        <item>Ivan</item>
+        <item>Oleg</item>
+        <item>Vasily</item>
+        <item>Ilya</item>
+        <item>Vladislav</item>
+        <item>Vladimir</item>
+        <item>Anatoly</item>
+        <item>Roman</item>
+        <item>Anton</item>
+        <item>Petr</item>
+    </string-array>
+</resources>
