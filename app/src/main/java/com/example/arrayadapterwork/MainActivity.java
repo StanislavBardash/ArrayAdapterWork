@@ -2,8 +2,10 @@ package com.example.arrayadapterwork;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
@@ -18,9 +20,12 @@ public class MainActivity extends AppCompatActivity {
     ArrayAdapter<String> adapter;
 
     //Default amount of names displayed
-    int n = 8;
+    int n = 18;
 
     ListView lv;
+    View lastView;
+    boolean isClicked = false;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +35,20 @@ public class MainActivity extends AppCompatActivity {
         lastNames = getResources().getStringArray(R.array.lastNames);
         fullnames = new ArrayList<>();
         initialize_adapter();
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                view.setBackgroundColor(Color.YELLOW);
+                if(isClicked){
+                    lastView.setBackgroundColor(Color.WHITE);
+                }
+                else{
+                    isClicked = true;
+
+                }
+                lastView = view;
+            }
+        });
     }
     public void initialize_adapter(){
         int sz = firstNames.length;
@@ -41,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
         }
         adapter = new ArrayAdapter<String>(this, R.layout.item, fullnames);
         lv.setAdapter(adapter);
+
     }
 
     public void onClick(View view) {
